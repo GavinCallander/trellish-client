@@ -7,4 +7,13 @@
     height: 5vh;
     background-color: $shade-dark;
     color: $shade-light;
+    &:hover {
+        color: white;
+    }
+    &_icon {
+        margin-right: 0.1rem;
+    }
+    &_text {
+        cursor: pointer;
+    }
 }

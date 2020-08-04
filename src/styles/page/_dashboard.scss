@@ -1,0 +1,36 @@
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    &_content {
+        width: 65%;
+        height: 100%;
+    }
+    &_menu {
+        padding: 1rem;
+        width: 30%;
+        height: 60%;
+        justify-content: flex-start;
+        align-items: flex-end;
+        &_heading {
+            width: 40%;
+            text-align: left;
+        }
+        &_item {
+            padding-left: 0.2rem;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            height: 6%;
+            width: 40%;
+            cursor: pointer;
+            &_active {
+                background-color: $warning;
+                color: $shade-light;
+                border-radius: 5px;
+            }
+            &_icon {
+                margin-right: 0.5rem;
+            }
+        }
+    }
+}
