@@ -27,9 +27,7 @@ export const Dashboard = props => {
                 <FontAwesomeIcon className='dashboard_menu_item_icon' icon={faTrello} size='1x'/><p className='heading heading_two'>{item}</p>
             </span>
         )
-    })
-
-
+    });
     let teamTabs = teams.map(team => {
         let currentClass ='dashboard_menu_item'
         if (team === activeDisplay) {
@@ -40,7 +38,7 @@ export const Dashboard = props => {
                 <FontAwesomeIcon className='dashboard_menu_item_icon' icon={faUserFriends} size='1x'/><p className='heading heading_two'>{team}</p>
             </span>
         )
-    })
+    });
 
     return (
         <div className='page'>
@@ -52,7 +50,7 @@ export const Dashboard = props => {
                 {teamTabs}
             </div>
             <div className='dashboard dashboard_content'>
-
+                <BoardsView />
             </div>
         </div>
     )

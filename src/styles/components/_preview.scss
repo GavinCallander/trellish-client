@@ -1,0 +1,29 @@
+.preview {
+    &_board {
+        margin: 0 0.5rem;
+        padding: 0.2rem;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 25%;
+        height: 90%;
+        background-color: $shade-dark;
+        color: $shade-light;
+        border-radius: 2px;
+        box-shadow: 0 0 10px 1px rgb(206, 206, 206);
+        cursor: pointer;
+        &:hover {
+            opacity: 0.9;
+        }
+        &_new {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $shade-light;
+            color: $shade-dark;
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+}

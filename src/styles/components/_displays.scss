@@ -1,0 +1,27 @@
+.display {
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-self: start;
+    width: 90%;
+    height: 25%;
+    &_boards {
+        margin-top: 0.8rem;
+        padding: 0.5rem;
+        height: 80%;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    &_header {
+        padding: 0;
+        height: 20%;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    &_icon {
+        margin-right: 0.5rem;
+    }
+}

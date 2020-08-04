@@ -2,13 +2,14 @@
     display: flex;
     flex-direction: column;
     &_content {
-        width: 65%;
-        height: 100%;
+        padding: 1rem;
+        width: 60%;
+        height: 83%;
     }
     &_menu {
         padding: 1rem;
         width: 30%;
-        height: 60%;
+        height: 80%;
         justify-content: flex-start;
         align-items: flex-end;
         &_heading {
@@ -16,7 +17,7 @@
             text-align: left;
         }
         &_item {
-            padding-left: 0.2rem;
+            padding-left: 0.4rem;
             display: flex;
             justify-content: flex-start;
             align-items: center;
