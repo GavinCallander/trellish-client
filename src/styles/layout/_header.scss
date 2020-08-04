@@ -1,0 +1,10 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 5vh;
+    background-color: $shade-dark;
+    color: $shade-light;
+}

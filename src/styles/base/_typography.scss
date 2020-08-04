@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Lato&display=swap');
+
+.brand {
+    font-family: 'Indie Flower', cursive;
+    font-weight: 800;
+    &_one {
+        font-size: 1.8rem;
+    }
+    &_two {
+        font-size: 0.9rem;
+    }
+};
+.content {
+    font-family: 'Lato', sans-serif;
+    &_one {
+        font-size: 1.1rem;
+    }
+    &_two {
+        font-size: 0.9rem;
+    }
+};
+.heading {
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+    &_one {
+        font-size: 1.3rem;
+    }
+    &_two {
+        font-size: 1.1rem;
+    }
+};

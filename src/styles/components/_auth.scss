@@ -1,0 +1,29 @@
+.auth {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &_form {
+        &_field {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            &_submit {
+                width: 90%;
+                text-align: center;
+            }
+        }
+    }
+    &_link {
+        cursor: pointer;
+    }
+    &_submit {
+        padding: 0.5rem;
+        background-color: $shade-dark;
+        color: $shade-light;
+        border: none;
+        border-radius: 5px;
+    }
+};
