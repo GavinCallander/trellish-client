@@ -24,7 +24,7 @@ export const Dashboard = props => {
         };
         return (
             <span className={currentClass} key={item} name={item} onClick={handleDisplayToggle}>
-                <FontAwesomeIcon className='dashboard_menu_item_icon' icon={faTrello} size='1x'/><p className='heading heading_two'>{item}</p>
+                <FontAwesomeIcon className='dashboard_menu_item_icon' icon={faTrello} size='1x'/><b><p className='content content_two'>{item}</p></b>
             </span>
         )
     });
@@ -35,7 +35,7 @@ export const Dashboard = props => {
         };
         return (
             <span className={currentClass} key={team} name={team} onClick={handleDisplayToggle}>
-                <FontAwesomeIcon className='dashboard_menu_item_icon' icon={faUserFriends} size='1x'/><p className='heading heading_two'>{team}</p>
+                <FontAwesomeIcon className='dashboard_menu_item_icon' icon={faUserFriends} size='1x'/><b><p className='content content_two'>{team}</p></b>
             </span>
         )
     });
@@ -50,8 +50,8 @@ export const Dashboard = props => {
                 {teamTabs}
             </div>
             <div className='dashboard dashboard_content'>
-                {/* <BoardsView /> */}
-                <TeamView />
+                <BoardsView />
+                {/* <TeamView /> */}
             </div>
         </div>
     )

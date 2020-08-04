@@ -14,6 +14,9 @@ export const Content = props => {
     return (
         <Router>
             <Header />
+            <Route path={ROUTES.BOARD} render={() => 
+                <Board />
+            } />
             <Route path={ROUTES.DASHBOARD} render={() =>
                 <Dashboard />
             } />
