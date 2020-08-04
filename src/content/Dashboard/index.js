@@ -50,7 +50,8 @@ export const Dashboard = props => {
                 {teamTabs}
             </div>
             <div className='dashboard dashboard_content'>
-                <BoardsView />
+                {/* <BoardsView /> */}
+                <TeamView />
             </div>
         </div>
     )

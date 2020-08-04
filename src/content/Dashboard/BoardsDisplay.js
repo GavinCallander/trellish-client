@@ -27,7 +27,7 @@ export const BoardsDisplay = props => {
             </div>
             <div className='display display_boards'>
                 {bodyContent}
-                <BoardPreview name={'Create new board'} type={''}/>
+                <BoardPreview name={'Create new board'} type={'new'}/>
             </div>
         </div>
     )

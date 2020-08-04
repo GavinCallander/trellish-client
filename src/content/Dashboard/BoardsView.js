@@ -14,7 +14,7 @@ export const BoardsView = props => {
         }];
 
     let teamDisplays = teamBoards.map(team => {
-        return <BoardsDisplay boards={team.boards} name={team.name} type='' />
+        return <BoardsDisplay boards={team.boards} key={team.name} name={team.name} type='' />
     })
 
     return (
