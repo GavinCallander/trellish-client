@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Redirect } from 'react-router-dom';
 
 import { BoardsView } from './BoardsView';
 import { TeamView } from './TeamView';
@@ -6,6 +7,8 @@ import { TeamView } from './TeamView';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserFriends } from '@fortawesome/free-solid-svg-icons';
 import { faTrello } from '@fortawesome/free-brands-svg-icons';
+
+import * as ROUTES from '../../constants/routes';
 
 export const Dashboard = props => {
 
@@ -39,6 +42,10 @@ export const Dashboard = props => {
             </span>
         )
     });
+
+    if (!props.user) {
+        return <Redirect to={ROUTES.LANDING} />
+    };
 
     return (
         <div className='page'>

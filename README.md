@@ -1,6 +1,6 @@
 # Trellish
 ## Overview
-Trello is one of my favorite sites ever, and not only from a practical standpoint. 
+Trello is one of my favorite sites ever and not only from a practical standpoint. 
 
 As a dev who designs like a dev, great design is something that never ceases to amaze me and the simple, yet sleak, UI of Trello makes it one of my favorite sites to visit.
 

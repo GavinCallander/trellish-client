@@ -15,13 +15,20 @@ export const Content = props => {
         <Router>
             <Header />
             <Route path={ROUTES.BOARD} render={() => 
-                <Board />
+                <Board 
+                    user={props.user}
+                />
             } />
             <Route path={ROUTES.DASHBOARD} render={() =>
-                <Dashboard />
+                <Dashboard 
+                    user={props.user}
+                />
             } />
             <Route exact path={ROUTES.LANDING} render={() =>
-                <Landing />
+                <Landing 
+                    updateUser={props.updateUser}
+                    user={props.user}
+                />
             } /> 
         </Router>
     )

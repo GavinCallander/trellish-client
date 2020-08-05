@@ -1,16 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Redirect } from 'react-router-dom';
 
-import { Signup } from './auth';
+import { Login, Signup } from './auth';
 
 import { Footer } from '../Layout';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrello } from '@fortawesome/free-brands-svg-icons'
+import { faTrello } from '@fortawesome/free-brands-svg-icons';
+
+import * as ROUTES from '../../constants/routes';
 
 export const Landing = props => {
+
+    const [showLogin, setShowLogin] = useState(false);
+
+    let currentClass = showLogin ? 'auth auth_modal' : 'auth_hidden';
+
+    if (props.user) {
+        return <Redirect to={ROUTES.DASHBOARD} />
+    };
+
     return (
         <div className='page landing'>
             <div className='landing_main'>
+                <Login currentClass={currentClass} setShowLogin={setShowLogin} updateUser={props.updateUser} />
                 <div className='landing_section landing_section_left'>
                     <div className='landing_logo'>
                         <FontAwesomeIcon icon={faTrello} size='5x' />
@@ -29,9 +42,9 @@ export const Landing = props => {
                     </div>
                 </div>
                 <div className='landing_section'>
-                    <Signup />
+                    <Signup updateUser={props.updateUser} />
                     <p className='content content_one'>
-                        Already have an account? <u className='auth_link'>Log in</u>
+                        Already have an account? <u className='auth_link' onClick={() => setShowLogin(true)}>Log in</u>
                     </p>
                 </div>
             </div>
