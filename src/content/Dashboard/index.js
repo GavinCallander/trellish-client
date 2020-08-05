@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom';
 
 import { BoardsView } from './BoardsView';
 import { NewBoardModal } from './NewBoardModal';
-import { TeamView } from './TeamView';
+// import { TeamView } from './TeamView';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserFriends } from '@fortawesome/free-solid-svg-icons';
@@ -15,14 +15,9 @@ export const Dashboard = props => {
 
     const [activeDisplay, setActiveDisplay] = useState('Boards')
     const [menuItems, setMenuItems] = useState(['Boards']);
-    const [personalBoards, setPersonalBoards] = useState([]);
     const [showBoardModal, setShowBoardModal] = useState(false);
-    const [teams, setTeams] = useState([]);
-    
-    useEffect(() => {
-        setPersonalBoards(props.user.boards);
-        setTeams(props.user.teams);
-    }, []);
+
+
 
     const handleDisplayToggle = e => {
         setActiveDisplay(e.currentTarget.getAttribute('name'));
@@ -40,17 +35,32 @@ export const Dashboard = props => {
             </span>
         )
     });
-    let teamTabs = teams.map((team, i) => {
-        let currentClass ='dashboard_menu_item'
-        if (team.name === activeDisplay) {
-            currentClass += ' dashboard_menu_item_active'
-        };
-        return (
-            <span className={currentClass} key={i} name={team.name} onClick={handleDisplayToggle}>
-                <FontAwesomeIcon className='dashboard_menu_item_icon' icon={faUserFriends} size='1x'/><b><p className='content content_two'>{team.name}</p></b>
-            </span>
-        )
-    });
+    let teamTabs;
+    if (props.teams) {
+        teamTabs = props.teams.map((team, i) => {
+            let currentClass ='dashboard_menu_item'
+            if (team.name === activeDisplay) {
+                currentClass += ' dashboard_menu_item_active'
+            };
+            return (
+                <span className={currentClass} key={i} name={team.name} onClick={handleDisplayToggle}>
+                    <FontAwesomeIcon className='dashboard_menu_item_icon' icon={faUserFriends} size='1x'/><b><p className='content content_two'>{team.name}</p></b>
+                </span>
+            )
+        });
+    }
+
+    // let teamTabs = teams.map((team, i) => {
+    //     let currentClass ='dashboard_menu_item'
+    //     if (team.name === activeDisplay) {
+    //         currentClass += ' dashboard_menu_item_active'
+    //     };
+    //     return (
+    //         <span className={currentClass} key={i} name={team.name} onClick={handleDisplayToggle}>
+    //             <FontAwesomeIcon className='dashboard_menu_item_icon' icon={faUserFriends} size='1x'/><b><p className='content content_two'>{team.name}</p></b>
+    //         </span>
+    //     )
+    // });
 
     if (!props.user) {
         return <Redirect to={ROUTES.LANDING} />
@@ -58,7 +68,7 @@ export const Dashboard = props => {
 
     return (
         <div className='page'>
-            <NewBoardModal currentClass={currentBoardModalClass} />
+            <NewBoardModal currentClass={currentBoardModalClass} setShowBoardModal={setShowBoardModal} teams={props.user.teams} />
             <div className='dashboard dashboard_menu'>
                 {menuTabs}
                 <span className='dashboard_menu_heading'>
@@ -67,7 +77,7 @@ export const Dashboard = props => {
                 {teamTabs}
             </div>
             <div className='dashboard dashboard_content'>
-                <BoardsView boards={personalBoards} setShowBoardModal={setShowBoardModal} teams={teams} />
+                <BoardsView boards={props.user.boards} setShowBoardModal={setShowBoardModal} teams={props.user.teams} />
                 {/* <TeamView /> */}
             </div>
         </div>

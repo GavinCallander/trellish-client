@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Board } from './Board';
 import { Dashboard } from './Dashboard';
 import { Landing } from './Landing';
-import { Team } from './Team';
+// import { Team } from './Team';
 
 import { Header } from './Layout';
 

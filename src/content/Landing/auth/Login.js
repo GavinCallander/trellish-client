@@ -6,6 +6,10 @@ export const Login = props => {
     const [message, setMessage] = useState('');
     const [password, setPassword] = useState('');
 
+    useEffect(() => {
+        setMessage('')
+    }, [email, password]);
+
     const handleLogin = e => {
         e.preventDefault();
         fetch(`${process.env.REACT_APP_SERVER_URL}/auth/login`, {

@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faUserFriends } from '@fortawesome/free-solid-svg-icons';
-import { faTrello } from '@fortawesome/free-brands-svg-icons';
+// import { faTrello } from '@fortawesome/free-brands-svg-icons';
 
 import { BoardPreview } from './BoardPreview';
 
@@ -18,13 +18,9 @@ export const BoardsDisplay = props => {
 
     let bodyContent;
     if (props.boards) {
-        console.log(props.boards)
         bodyContent = props.boards.map((board, i) => {
             return <BoardPreview key={i} name={board.name}/>
         })
-    }
-    else {
-        console.log('loading');
     };
 
     return (
@@ -32,7 +28,7 @@ export const BoardsDisplay = props => {
             <div className='display display_header'>
                 {headerContent}
             </div>
-            <div className='display display_boards'>
+            <div className='display_boards'>
                 {bodyContent}
                 <BoardPreview name={'Create new board'} showBoardModal={props.setShowBoardModal} type={'new'}/>
             </div>
