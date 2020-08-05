@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faUserFriends } from '@fortawesome/free-solid-svg-icons';
@@ -16,9 +16,16 @@ export const BoardsDisplay = props => {
         <FontAwesomeIcon className='display_icon' icon={faUserFriends} size='1x' /><p className='heading heading_two'>{props.name}</p>
         </>
 
-    let bodyContent = props.boards.map(board => {
-        return <BoardPreview key={board} name={board}/>
-    })
+    let bodyContent;
+    if (props.boards) {
+        console.log(props.boards)
+        bodyContent = props.boards.map((board, i) => {
+            return <BoardPreview key={i} name={board.name}/>
+        })
+    }
+    else {
+        console.log('loading');
+    };
 
     return (
         <div className='display'>
@@ -27,7 +34,7 @@ export const BoardsDisplay = props => {
             </div>
             <div className='display display_boards'>
                 {bodyContent}
-                <BoardPreview name={'Create new board'} type={'new'}/>
+                <BoardPreview name={'Create new board'} showBoardModal={props.setShowBoardModal} type={'new'}/>
             </div>
         </div>
     )

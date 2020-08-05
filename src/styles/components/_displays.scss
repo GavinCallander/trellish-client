@@ -13,6 +13,7 @@
         flex-direction: row;
         justify-content: flex-start;
         align-items: center;
+        overflow-x: scroll;
     }
     &_header {
         padding: 0;

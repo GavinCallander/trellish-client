@@ -13,7 +13,7 @@ import * as ROUTES from '../constants/routes';
 export const Content = props => {
     return (
         <Router>
-            <Header />
+            <Header user={props.user} />
             <Route path={ROUTES.BOARD} render={() => 
                 <Board 
                     user={props.user}

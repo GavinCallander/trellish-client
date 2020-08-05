@@ -6,7 +6,7 @@ export const BoardPreview = props => {
     let propsClassText = props.type === 'new' ? 'content content_two' : 'heading heading_two'
 
     return (
-        <div className={propsClass}>
+        <div className={propsClass} onClick={() => props.showBoardModal(true)}>
             <p className={propsClassText}>{props.name}</p>
         </div>
     )

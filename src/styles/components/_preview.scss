@@ -9,8 +9,8 @@
         height: 90%;
         background-color: $shade-dark;
         color: $shade-light;
-        border-radius: 2px;
-        box-shadow: 0 0 10px 1px rgb(206, 206, 206);
+        border-radius: 1px;
+        box-shadow: 0 0 5px 1px rgb(206, 206, 206);
         cursor: pointer;
         &:hover {
             opacity: 0.9;
